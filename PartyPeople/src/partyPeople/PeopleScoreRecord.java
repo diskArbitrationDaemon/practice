@@ -1,17 +1,17 @@
-package partypeople;
-import java.util.ArrayList;
-import java.util.List;
+package partyPeople;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class PeopleScoreRecord {
 
 	
-	private ArrayList<Person> people;
+	private Set<Person> people;
 	private double score;
 	
 	public PeopleScoreRecord(){
 		score = 0;
-		people = new ArrayList<Person>();
+		people = new HashSet<Person>();
 	}
 	
 	public void addPerson(Person person){
@@ -23,7 +23,7 @@ public class PeopleScoreRecord {
 		return score;
 	}
 	
-	public List<Person> getPeople(){
+	public Set<Person> getPeople(){
 		return this.people;
 	}
 	

@@ -1,4 +1,4 @@
-package partypeople;
+package partyPeople;
 import java.util.ArrayList;
 
 import Json.JsonPerson;

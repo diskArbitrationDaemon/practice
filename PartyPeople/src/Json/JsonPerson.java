@@ -25,7 +25,4 @@ public class JsonPerson {
 	public double getScore() {
 		return score;
 	}
-
-	
-	
 }

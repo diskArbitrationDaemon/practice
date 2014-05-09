@@ -1,4 +1,4 @@
-package partypeople;
+package partyPeople;
 import Json.DeserializeFromJson;
 
 public class runPartyPeople {
@@ -9,7 +9,8 @@ public class runPartyPeople {
 	public static void main(String[] args) {
 		
 		PeopleScoreRecord inviteCeo;
-		Person ceo = DeserializeFromJson.deserialize("staff.json");
+		DeserializeFromJson deserializeFromJson = new DeserializeFromJson();
+		Person ceo = deserializeFromJson.deserialize("staff.json");
 		inviteCeo = ceo.getMaxScore(true);
 		
 		for (Person person : inviteCeo.getPeople()){
