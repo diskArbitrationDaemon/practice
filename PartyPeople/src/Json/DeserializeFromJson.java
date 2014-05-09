@@ -13,12 +13,12 @@ public class DeserializeFromJson {
 	
 	private static HashMap<String, Person> nameToPeople = new HashMap<>();
 
-	public static Person deserialize(){
+	public static Person deserialize(String file){
 		
 		Person ceo = null;
 		Gson gson = new Gson();
 		try {
-			Scanner s =  new Scanner(new File("staff.json"));
+			Scanner s =  new Scanner(new File(file));
 			String content =s.useDelimiter("\\Z").next();
 			JsonPerson[] jsonPersonArray = gson.fromJson(content, JsonPerson[].class);
 			
@@ -29,7 +29,7 @@ public class DeserializeFromJson {
 			}
 			
 			for (JsonPerson jsonPerson : jsonPersonArray){
-				if (jsonPerson.getBossName().equals("")){
+				if (jsonPerson.getBossName() == null){
 					ceo = nameToPeople.get(jsonPerson.getName());
 				} else {
 					nameToPeople.get(jsonPerson.getName()).setBoss(nameToPeople.get(jsonPerson.getBossName()));
